@@ -1,4 +1,4 @@
-baseURL = "https://blog.fadedhood.com/"
+baseURL = "https://fadedhood.github.io/"
 languageCode = "en-us"
 theme = "hugo-winston-theme"
 themesDir = "themes"
@@ -15,7 +15,7 @@ pygmentsUseClasses = true
 
 [params]
   google_analytics_id = ""
-  twitter_handle = "@zerostaticio"
+  twitter_handle = "@anon_faded"
   showAuthorOnHomepage = true
   showAuthorOnPosts = false
   showIntroContentOnHomepage = true
