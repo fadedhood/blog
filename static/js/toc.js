@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     floatButton.className = 'toc-float-button';
     floatButton.innerHTML = `
         <svg viewBox="0 0 24 24" width="20" height="20">
-            <path fill="currentColor" d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/>
+            <path fill="currentColor" d="M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z"/>
         </svg>
     `;
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="toc-header">
             <div class="toc-title">
                 <svg viewBox="0 0 24 24" width="18" height="18">
-                    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    <path fill="currentColor" d="M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z"/>
                 </svg>
                 <span>[SYS::NAV]</span>
             </div>
