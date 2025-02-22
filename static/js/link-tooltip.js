@@ -136,7 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
       !link.closest('.summaries') &&
       !link.closest('.main-menu') &&
       !link.closest('.header') &&
-      !link.closest('.mobile-menu')
+      !link.closest('.mobile-menu') &&
+      !link.closest('.menu-main-mobile')
     ) {
       const container = document.createElement('div');
       container.className = 'cyber-tooltip-container';
