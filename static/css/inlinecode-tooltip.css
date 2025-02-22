@@ -73,7 +73,7 @@
     content: '' !important;
     position: absolute !important;
     bottom: -3px !important;
-    left: 50% !important;
+    left: var(--arrow-left, 50%) !important;
     transform: translateX(-50%) rotate(45deg) !important;
     width: 6px !important;
     height: 6px !important;
@@ -81,6 +81,19 @@
     border-right: 1px solid #333 !important;
     border-bottom: 1px solid #333 !important;
     z-index: -1 !important;
+}
+
+
+/* (Optional: if you support vertical flipping) */
+.code-tooltip.edge-bottom::before {
+    bottom: auto !important;
+    top: -3px !important;
+    left: var(--arrow-left, 50%) !important;
+    transform: translateX(-50%) rotate(45deg) !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-left: 1px solid #333 !important;
+    border-top: 1px solid #333 !important;
 }
 
 .code-tooltip-content::before {
