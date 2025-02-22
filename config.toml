@@ -2,7 +2,7 @@ baseURL = "https://fadedhood.github.io/"
 languageCode = "en-us"
 theme = "hugo-winston-theme"
 themesDir = "themes"
-title = "Hugo Winston Theme"
+title = "FadSec Blog"
 paginate = 3
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
@@ -18,7 +18,7 @@ pygmentsUseClasses = true
   twitter_handle = "@anon_faded"
   showAuthorOnHomepage = true
   showAuthorOnPosts = false
-  showIntroContentOnHomepage = true
+  showIntroContentOnHomepage = true # the description below the title on home page
   showPostsOnHomepage = false
   showReadTimeOnPosts = true
   usePaginationOnHomepage = false
@@ -26,17 +26,20 @@ pygmentsUseClasses = true
   sortPostsByDateOldestFirst = false
   addDot = true
   addFrame = false
-  highlightColor = '#7b16ff'
-  baseColor = "#ffffff"
-  baseOffsetColor = "#eaeaea"
-  headingColor = "#1c1b1d"
-  textColor = "#4e5157"
-  dotColor = "#7b16ff"
+  # OLD CORRECTS, OVERWRITTEN IN THE CUSTOM.CSS FILE
+  # ---------
+  # highlightColor = '#7b16ff'
+  # baseColor = "#ffffff"
+  # baseOffsetColor = "#eaeaea"
+  # headingColor = "#1c1b1d"
+  # textColor = "#4e5157"
+  # dotColor = "#7b16ff"
+  # ---------
   enableGoogleFonts = true 
-  googleFontsUrl = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-  fontFamilyHeading = "Poppins"
-  fontFamilyParagraph = "Helvetica"
-  fontFamilyMonospace = "monospace"
+  googleFontsUrl = "https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap"
+  fontFamilyHeading = "Ubuntu"
+  fontFamilyParagraph = "Ubuntu"
+  fontFamilyMonospace = "Ubuntu Mono"
 
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]
@@ -49,7 +52,7 @@ pygmentsUseClasses = true
 [menu]
   [[menu.main]]
     identifier = 'home'
-    name = 'Home'
+    name = 'Home' # this is the name that will appear in the menu
     url = '/'
     weight = 1
   [[menu.main]]
