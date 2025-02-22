@@ -32,7 +32,7 @@ A customized Hugo blog theme with dark mode and enhanced code block styling. Bui
 - Font Stack:
   - Headings: Poppins
   - Body: Helvetica
-  - Monospace: JetBrains Mono
+  - Monospace: Ubuntu Mono
 - Responsive text sizing
 - Custom blockquote styling
 - Enhanced list formatting

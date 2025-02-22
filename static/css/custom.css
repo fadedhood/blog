@@ -100,7 +100,7 @@ a:hover {
 .code-block-content pre code {
   display: block !important;
   line-height: 1.6 !important;
-  font-family: 'JetBrains Mono', monospace !important;
+  font-family: 'Ubuntu Mono', monospace !important;
   margin-left: 3.5em !important;
   position: relative !important;
 }
@@ -134,7 +134,7 @@ a:hover {
 
 .lang-label {
   color: #666 !important;
-  font-family: 'JetBrains Mono', monospace !important;
+  font-family: 'Ubuntu Mono', monospace !important;
   font-size: 11px !important;
   font-weight: 500 !important;
   letter-spacing: 0.5px !important;
@@ -936,7 +936,7 @@ blockquote {
 }
 
 .readtime-text {
-  font-family: 'JetBrains Mono', monospace !important;
+  font-family: 'Ubuntu Mono', monospace !important;
   font-size: 12px !important;
   font-weight: 400 !important;
 }
