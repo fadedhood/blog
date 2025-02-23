@@ -1,20 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerInput = document.querySelector('.hamburger-input');
     const header = document.querySelector('.header');
-    let lastScroll = 0;
-
-    // Handle scroll effects
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        // Add shadow and opacity when scrolling down
-        if (currentScroll > 20) {
-            header.style.background = 'rgba(10, 10, 10, 0.98)';
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(237, 41, 57, 0.2)';
+    
+    if (hamburgerInput) {
+      hamburgerInput.addEventListener('change', function() {
+        if (this.checked) {
+          header.classList.add('menu-open');
         } else {
-            header.style.background = 'rgba(10, 10, 10, 0.95)';
-            header.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(237, 41, 57, 0.1)';
+          header.classList.remove('menu-open');
         }
-
-        lastScroll = currentScroll;
-    });
-});
+      });
+    }
+  
+    // (Optional) Existing scroll logic for header state:
+    let scrollTimeout;
+    function handleScroll() {
+      const currentScroll = window.pageYOffset;
+      clearTimeout(scrollTimeout);
+      if (currentScroll > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      scrollTimeout = setTimeout(() => {
+        header.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+      }, 100);
+    }
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  });
+  

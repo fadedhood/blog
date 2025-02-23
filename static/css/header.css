@@ -1,112 +1,167 @@
+/* Outer header: full width with side padding (floating effect) */
 .header {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 1000 !important;
-  padding: 15px 25px !important;
-  background: rgba(10, 10, 10, 0.95) !important;
-  backdrop-filter: blur(10px) !important;
-  border-bottom: 1px solid rgba(237, 41, 57, 0.1) !important;
-  box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(237, 41, 57, 0.1) !important;
-  transition: all 0.3s ease !important;
-}
-
-/* Add styles for when mobile menu is open */
-.header.menu-open .header-logo,
-.header.menu-open .menu-main {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: opacity 0.3s ease, visibility 0.3s ease !important;
-}
-
-.header.menu-open {
-  background: transparent !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-}
-
-.header-logo {
-  font-family: 'Ubuntu Mono', monospace !important;
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  color: var(--highlight-color) !important;
-  text-decoration: none !important;
-  letter-spacing: 1px !important;
-  transition: all 0.3s ease !important;
-  text-shadow: 0 0 8px rgba(237, 41, 57, 0.3) !important;
-}
-
-.header-logo:hover {
-  color: #ff4444 !important;
-  text-shadow: 0 0 12px rgba(237, 41, 57, 0.5) !important;
-}
-
-/* Main menu styles */
-.menu-main ul {
-  display: flex !important;
-  gap: 25px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-
-.menu-main ul li a {
-  font-family: 'Ubuntu', sans-serif !important;
-  font-size: 1rem !important;
-  color: #e6e6e6 !important;
-  text-decoration: none !important;
-  position: relative !important;
-  padding: 5px 0 !important;
-  transition: all 0.3s ease !important;
-}
-
-.menu-main ul li a::before {
-  content: '>' !important;
-  color: var(--highlight-color) !important;
-  margin-right: 5px !important;
-  opacity: 0 !important;
-  transform: translateX(-10px) !important;
-  transition: all 0.3s ease !important;
-}
-
-.menu-main ul li a:hover::before,
-.menu-main ul li.active a::before {
-  opacity: 0.8 !important;
-  transform: translateX(0) !important;
-}
-
-.menu-main ul li a::after {
-  content: '' !important;
-  position: absolute !important;
-  left: 0 !important;
-  bottom: -2px !important;
-  width: 0 !important;
-  height: 1px !important;
-  background: var(--highlight-color) !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 0 5px var(--highlight-color) !important;
-}
-
-.menu-main ul li a:hover::after,
-.menu-main ul li.active a::after {
-  width: 100% !important;
-}
-
-/* Add space for fixed header */
-body {
-  padding-top: 80px !important;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1023px) {
-  .header {
-    padding: 12px 20px !important;
+    position: fixed;
+    top: 12px;
+    left: 0;
+    right: 0;
+    padding: 0 15px;  /* side gaps so the dock isn’t flush with the viewport */
+    z-index: 1000;
+    margin-bottom: 20px; /* additional gap below header (for visual separation) */
   }
   
-  .menu-main {
-    display: none !important;
+  /* Inner header container (dock) */
+  .header-container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px; /* limit dock width on desktop */
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(237, 41, 57, 0.1);
+    border-radius: 12px;
+    box-shadow: 
+       0 -15px 30px rgba(0, 0, 0, 0.4),
+       0 -10px 20px rgba(0, 0, 0, 0.3),
+       0 -5px 15px rgba(0, 0, 0, 0.2),
+       0 2px 6px rgba(0, 0, 0, 0.1),
+       0 3px 8px rgba(0, 0, 0, 0.08),
+       0 0 0 1px rgba(237, 41, 57, 0.1),
+       0 0 15px rgba(237, 41, 57, 0.05) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0px 25px;  /* compact vertical padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-clip: padding-box;
   }
-}
+  
+  /* When mobile menu is open, blur the entire dock */
+  .header.menu-open .header-container {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  /* Update the blur target to specific elements instead of whole container */
+  .header.menu-open .header-logo,
+  .header.menu-open .menu-main {
+    filter: blur(8px) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Ensure hamburger stays clear */
+  .header.menu-open .hamburger-wrapper {
+    filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Enhanced shadow when scrolled */
+  .header.scrolled .header-container {
+    background: rgba(10, 10, 10, 0.98) !important;
+    box-shadow: 
+       0 -20px 40px rgba(0, 0, 0, 0.5),
+       0 -15px 30px rgba(0, 0, 0, 0.4),
+       0 -10px 20px rgba(0, 0, 0, 0.3),
+       0 2px 8px rgba(0, 0, 0, 0.15),
+       0 3px 10px rgba(0, 0, 0, 0.1),
+       0 0 0 1px rgba(237, 41, 57, 0.15),
+       0 0 20px rgba(237, 41, 57, 0.08) !important;
+  }
+  
+  /* Logo (left side) */
+  .header-logo {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--highlight-color);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 8px rgba(237,41,57,0.3);
+  }
+  .header-logo:hover {
+    color: #ff4444;
+    text-shadow: 0 0 12px rgba(237,41,57,0.5);
+  }
+  
+  /* Main Menu (links) on desktop: positioned to the right */
+  .menu-main ul {
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .menu-main ul li a {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    color: #e6e6e6;
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+  }
+  .menu-main ul li a::before {
+    content: '>';
+    color: var(--highlight-color);
+    margin-right: 5px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+  .menu-main ul li a:hover::before,
+  .menu-main ul li.active a::before {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+  .menu-main ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: var(--highlight-color) !important;  /* force red underline */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px var(--highlight-color);
+  }
+  .menu-main ul li a:hover::after,
+  .menu-main ul li.active a::after {
+    width: 100%;
+  }
+  
+  /* Hamburger remains in its original location */
+  .hamburger-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    margin-top: 4px !important; /* Added top margin to move it down */
+    transform: translateY(1px) !important; /* Fine-tune vertical position */
+  }
+  
+  /* Desktop vs. Mobile display */
+  /* Desktop: show main menu; hide hamburger */
+  @media (min-width: 1024px) {
+    .menu-main {
+      display: block;
+    }
+    .hamburger-wrapper {
+      display: none;
+    }
+  }
+  /* Mobile: hide main menu; show hamburger */
+  @media (max-width: 1023px) {
+    .menu-main {
+      display: none;
+    }
+    .hamburger-wrapper {
+      display: block;
+    }
+  }
+  
+  /* Ensure page content starts below the fixed header */
+  body {
+    padding-top: 100px; /* Adjust based on your header’s final height */
+  }

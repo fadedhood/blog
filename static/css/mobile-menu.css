@@ -196,6 +196,9 @@
   justify-content: center !important;
   gap: 16px !important;
   transition: all 0.3s ease !important;
+  margin-top: 0 !important; /* Reset any previous margin */
+  padding: 4px 0 !important; /* Add some vertical padding */
+  transform: translateY(2px) !important; /* Move down slightly */
 }
 
 .hamburger-button::after {
@@ -512,6 +515,9 @@
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
+  margin-top: 0 !important; /* Reset any previous margin */
+  padding: 4px 0 !important; /* Add some vertical padding */
+  transform: translateY(2px) !important; /* Move down slightly */
   margin-top: -2px !important;
   gap: 2px !important; /* Minimal gap between icon and text */
 }
