@@ -8,7 +8,7 @@
   padding: 12px;
   background: var(--base-offset-color);
   color: var(--text-color);
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Ubuntu Mono', monospace;
   border-radius: 12px;
   width: 320px; /* Fixed width */
   max-width: 100%;

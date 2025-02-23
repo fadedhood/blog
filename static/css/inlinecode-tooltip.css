@@ -1,35 +1,69 @@
 /* Base inline code styling */
 .content p code,
 .content li code,
-.content td code {
-    background-color: #1a1a1a !important;
-    color: #e6e6e6 !important;
-    padding: 2px 6px !important;
-    padding-left: 16px !important;
-    border-radius: 4px !important;
-    font-family: 'Ubuntu Mono', monospace !important;
-    font-size: 0.9em !important;
-    cursor: pointer !important;
-    position: relative !important;
+.content td code,
+.description code,
+.intro-content code,
+.intro p code,
+.summary p code {
+  font-family: 'Ubuntu Mono', monospace !important;
+  background: rgba(15, 15, 15, 0.95) !important;
+  color: var(--highlight-color) !important;
+  padding: 0px 5px 0px 25px !important; /* Increased left padding to 24px */
+  border-radius: 3px !important;
+  font-size: 0.95em !important;
+  position: relative !important;
+  display: inline-block !important;
+  line-height: 1.3 !important;
+  margin: 0 2px !important;
+  border: none !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.2s ease !important;
 }
 
-/* Red > prefix for inline code */
+/* Terminal prompt effect */
 .content p code::before,
 .content li code::before,
-.content td code::before {
-    content: '>' !important;
-    color: var(--highlight-color) !important;
-    position: absolute !important;
-    left: 6px !important;
-    opacity: 0.6 !important;
-    transition: all 0.2s ease !important;
+.content td code::before,
+.description code::before,
+.intro-content code::before,
+.intro p code::before,
+.summary p code::before {
+  content: '$~' !important;
+  color: var(--highlight-color) !important;
+  position: absolute !important;
+  left: 4px !important; /* Slightly moved prompt right */
+  opacity: 0.7 !important;
+  transition: all 0.2s ease !important;
+  z-index: 1 !important;
+  font-size: 0.9em !important;
+  text-shadow: 0 0 5px rgba(237, 41, 57, 0.3) !important; /* Subtle glow only for prompt */
+  letter-spacing: -0.5px !important; /* Tighten the $~ characters */
+  padding-right: 4px !important; /* Added padding after the prompt */
 }
 
+/* Hover effects */
+.content p code:hover,
+.content li code:hover,
+.content td code:hover,
+.description code:hover,
+.intro-content code:hover,
+.intro p code:hover,
+.summary p code:hover {
+  background: rgba(20, 20, 20, 0.95) !important;
+}
+
+/* Prompt hover effect */
 .content p code:hover::before,
 .content li code:hover::before,
-.content td code:hover::before {
-    opacity: 1 !important;
-    transform: scale(1.1) !important;
+.content td code:hover::before,
+.description code:hover::before,
+.intro-content code:hover::before,
+.intro p code:hover::before,
+.summary p code:hover::before {
+  opacity: 1 !important;
+  color: #98C379 !important; /* Matrix-style green */
+  text-shadow: 0 0 8px rgba(152, 195, 121, 0.5) !important; /* Green glow */
 }
 
 /* Remove old tooltip styles */
@@ -82,7 +116,6 @@
     border-bottom: 1px solid #333 !important;
     z-index: -1 !important;
 }
-
 
 /* (Optional: if you support vertical flipping) */
 .code-tooltip.edge-bottom::before {
