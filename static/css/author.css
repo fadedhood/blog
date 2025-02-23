@@ -12,6 +12,7 @@
   border-radius: 12px;
   width: 320px; /* Fixed width */
   max-width: 100%;
+  margin-bottom: 40px; /* Adds space below the author section */
 }
 
 /* 🔥 Fix: Red Border on Image */
