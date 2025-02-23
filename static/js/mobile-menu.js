@@ -1,17 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburgerInput = document.querySelector('.hamburger-input');
     const mobileMenu = document.querySelector('.menu-main-mobile');
+    const header = document.querySelector('.header');
     
-    if (!hamburgerInput || !mobileMenu) return;
+    if (!hamburgerInput || !mobileMenu || !header) return;
 
     const menuItems = mobileMenu.querySelectorAll('li');
     
     // Reset initial states
     hamburgerInput.checked = false;
     mobileMenu.classList.remove('open');
+    header.classList.remove('menu-open');
     
     hamburgerInput.addEventListener('change', function(e) {
         mobileMenu.classList.toggle('open', this.checked);
+        header.classList.toggle('menu-open', this.checked);
         
         // Simple stagger animation
         if (this.checked) {
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!mobileMenu.contains(e.target) && !e.target.closest('.hamburger-button')) {
             hamburgerInput.checked = false;
             mobileMenu.classList.remove('open');
+            header.classList.remove('menu-open');
             menuItems.forEach(item => {
                 item.style.transitionDelay = '0s';
             });
