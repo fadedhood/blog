@@ -13,6 +13,16 @@
     {{ end }}
   </div>
 
+<!-- Read Posts Section -->
+<div class="read-posts">
+  <a href="/posts" class="read-posts-link">Read Posts</a>
+  <span class="material-icons">north_east</span>
+</div>
+
+
+
+
+
   {{ if .Site.Params.showPostsOnHomepage }}
 
     {{ $pages := where .Site.RegularPages "Type" "posts" }}
@@ -33,7 +43,6 @@
       {{ range first $limit $sorted}}
         {{ .Render "summary" }}
       {{ end }}
-      <a class="view-more" href="/posts">More Posts</a>
     {{ end }}
   {{ end }}
 
