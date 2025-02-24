@@ -78,14 +78,18 @@
 {{ if eq .Site.Params.addFrame true }}{{ $themeStyle = $themeStyle | append "frame" }}{{ end }}
 
 <body class='page{{ delimit $themeStyle " " }} {{ block "body_classes" . }}{{ end }}'>
-  {{ partial "menu-main-mobile.html" . }}
-  <div id="wrapper" class="wrapper">
-    {{ partial "header.html" . }}
-    {{ block "main" . }}
-    {{ end }}
-    {{ partial "footer.html" . }}
-    {{ partial "footer-scripts.html" . }}
-  </div>
+  {{ if and (eq .RelPermalink "/about/") (not .Site.Params.showAboutPage) }}
+    <script>window.location.href = "/404.html";</script>
+  {{ else }}
+    {{ partial "menu-main-mobile.html" . }}
+    <div id="wrapper" class="wrapper">
+      {{ partial "header.html" . }}
+      {{ block "main" . }}
+      {{ end }}
+      {{ partial "footer.html" . }}
+      {{ partial "footer-scripts.html" . }}
+    </div>
+  {{ end }}
 
   <!-- Add lightbox container -->
   <div id="lightbox" class="lightbox">

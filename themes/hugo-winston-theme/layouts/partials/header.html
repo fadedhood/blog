@@ -5,9 +5,11 @@
       <ul>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <li class="{{ if or (eq .URL $currentPage.RelPermalink) (and (ne .URL "/") (hasPrefix $currentPage.RelPermalink .URL)) }}active{{ end }}">
-          <a href="{{ .URL }}" data-section="{{ trim .URL "/" }}">{{ .Name }}</a>
-        </li>
+          {{ if not (and (eq .Identifier "about") (not $.Site.Params.showAboutPage)) }}
+            <li class="{{ if or (eq .URL $currentPage.RelPermalink) (and (ne .URL "/") (hasPrefix $currentPage.RelPermalink .URL)) }}active{{ end }}">
+              <a href="{{ .URL }}" data-section="{{ trim .URL "/" }}">{{ .Name }}</a>
+            </li>
+          {{ end }}
         {{ end }}
       </ul>
     </div>
@@ -23,3 +25,10 @@
     </div>
   </div>
 </div>
+
+<script>
+// Make showAboutPage param available to JavaScript
+window.Hugo = {
+  showAboutPage: {{ .Site.Params.showAboutPage }}
+};
+</script>

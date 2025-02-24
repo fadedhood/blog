@@ -1,6 +1,13 @@
 {{ define "body_classes" }}page-home{{ end }}
 
 {{ define "main" }}
+  {{ if eq .RelPermalink "/about/" }}
+    {{ if not .Site.Params.showAboutPage }}
+      {{ return }}
+    {{ end }}
+  {{ end }}
+
+  {{ $styles := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.scss" . }}
 
   {{ if .Site.Params.showAuthorOnHomepage }}
     {{ partial "author-large.html" . }}
@@ -18,10 +25,6 @@
   <a href="/posts" class="read-posts-link">Read Posts</a>
   <span class="material-icons">north_east</span>
 </div>
-
-
-
-
 
   {{ if .Site.Params.showPostsOnHomepage }}
 

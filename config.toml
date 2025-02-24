@@ -40,6 +40,7 @@ pygmentsUseClasses = true
   fontFamilyHeading = "Ubuntu"
   fontFamilyParagraph = "Ubuntu"
   fontFamilyMonospace = "Ubuntu Mono"
+  showAboutPage = false  # Toggle to control About page visibility
 
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]
@@ -52,7 +53,7 @@ pygmentsUseClasses = true
 [menu]
   [[menu.main]]
     identifier = 'home'
-    name = 'Home' # this is the name that will appear in the menu
+    name = 'Home'
     url = '/'
     weight = 1
   [[menu.main]]
@@ -64,7 +65,7 @@ pygmentsUseClasses = true
     name = "About"
     identifier = "about"
     weight = 3
-    url = "/About/"
+    url = "/about/"
   [[menu.main]]
     name = "Tags"
     identifier = "tags"
