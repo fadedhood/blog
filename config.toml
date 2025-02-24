@@ -41,6 +41,13 @@ pygmentsUseClasses = true
   fontFamilyParagraph = "Ubuntu"
   fontFamilyMonospace = "Ubuntu Mono"
   showAboutPage = false  # Toggle to control About page visibility
+  github_username = "anonfaded"
+  kofi_username = "fadedx"
+  discord_invite = "kvAZvdkuuN"
+  email = "fadedhood@proton.me"
+  repo_name = "hugo-winston-cyber"  # for GitHub stars badge
+  footer_text = ":: F4dS3c Blog"  # Add this line for custom footer text
+  footer_year = "2024-2025"  # Static year for footer
 
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]

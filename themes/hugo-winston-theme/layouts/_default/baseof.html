@@ -75,6 +75,8 @@
 
   <!-- Add list styles -->
   <link rel="stylesheet" href="/css/lists.css" />
+<!-- css for footer -->
+  <link rel="stylesheet" href="/css/footer.css" />
 
   {{ partial "extend-head.html" . }}
 </head>
@@ -91,9 +93,10 @@
       {{ partial "header.html" . }}
       {{ block "main" . }}
       {{ end }}
-      {{ partial "footer.html" . }}
-      {{ partial "footer-scripts.html" . }}
     </div>
+    {{ partial "footer.html" . }} <!-- Moved outside wrapper -->
+    {{ partial "footer-scripts.html" . }}
+
   {{ end }}
 
   <!-- Add lightbox container -->

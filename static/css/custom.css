@@ -18,6 +18,7 @@ html, body {
 body {
   background: var(--base-color) !important;
   color: var(--text-color) !important;
+  padding: 0 !important;
 }
 
 ::selection {
@@ -52,6 +53,47 @@ a:hover {
   text-decoration: underline !important;
 }
 
+/* Override all body and wrapper padding */
+body, 
+.page,
+.page-home {
+    padding: 0 !important;
+}
+
+/* Only modify padding to keep bottom at 0 while preserving others */
+.wrapper,
+#wrapper,
+div[id="wrapper"] {
+    padding: 100px 50px 0 50px !important; /* Restore top and side padding */
+    margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+    .wrapper,
+    #wrapper,
+    div[id="wrapper"] {
+        padding: 100px 20px 0 20px !important; /* Mobile side padding */
+    }
+}
+
+/* Restore table of contents behavior */
+.content.with-toc {
+    padding-right: 300px !important; /* Space for TOC */
+}
+
+@media (max-width: 768px) {
+    .content.with-toc {
+        padding-right: 20px !important; /* Mobile spacing */
+    }
+}
+
+/* Remove any bottom spacing */
+.content,
+.intro,
+.author-large {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
 
 /* Code block styles */
 .code-block-wrapper {
@@ -790,6 +832,8 @@ a:hover {
   position: relative !important;
   display: inline-block !important;
   padding-bottom: 5px !important;
+  padding-left: 25px !important; /* Make space for the terminal icon */
+  margin-left: -25px !important; /* Offset the padding to maintain alignment */
 }
 
 .content h1::after,
@@ -1073,4 +1117,155 @@ a:hover {
   100% { background-position: 0% 50%; }
 }
 /* ############################################# */
+
+
+
+/* Ensure tooltips stay visible */
+.cyber-tooltip {
+    overflow: visible !important;
+    z-index: 1000 !important;
+    pointer-events: auto !important;
+}
+
+/* Reset wrapper to original state and fix overflow */
+.wrapper {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 100px 50px 0 50px !important; /* Keep top/sides, no bottom */
+    position: relative !important; /* Create new stacking context */
+    overflow: visible !important; /* Allow content to overflow for tooltips */
+}
+
+/* Fix wrapper responsiveness */
+.wrapper {
+    width: 100% !important;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 100px 50px 0 50px !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    /* word-wrap: break-word !important; */
+    /* word-break: break-word !important; */
+     /* Prevents overflow on mobile */
+    hyphens: auto !important;
+}
+
+/* Ensure content stays within bounds */
+.content {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+}
+
+/* Code block responsiveness */
+pre, code {
+    /* white-space: pre-wrap !important; */
+    /* word-wrap: break-word !important; */
+    max-width: 100% !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 100px 20px 0 20px !important;
+    }
+    
+    pre, code {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 100px 15px 0 15px !important;
+    }
+    
+    pre, code {
+        font-size: 13px !important;
+    }
+}
+
+/* Fix content area */
+.content {
+
+    overflow: visible !important; /* Allow tooltips to be visible */
+}
+
+/* Ensure tooltips and terminal icons are always visible */
+.cyber-tooltip,
+.content h1::before,
+.content h2::before,
+.content h3::before {
+    z-index: 100 !important; /* Higher than content but lower than header */
+}
+
+/* Ensure headings can show their decorations */
+.content h1,
+.content h2,
+.content h3 {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+/* Ensure header stays on top */
+.header {
+    z-index: 1000 !important;
+}
+
+/* Fix title word wrapping */
+.content h1,
+.content h2,
+.content h3,
+.post-title,
+.intro h1,
+.summary h1 {
+    hyphens: manual !important; /* Disable automatic hyphenation */
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important; /* Prevent breaking within words */
+    -webkit-hyphens: manual !important;
+    -ms-hyphens: manual !important;
+    white-space: normal !important;
+}
+
+/* Ensure proper width for containers */
+.content,
+.intro,
+.summary {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+}
+
+/* Fix word wrapping for all text content */
+.content p,
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.post-title,
+.intro h1,
+.intro p,
+.summary h1,
+.summary p {
+    hyphens: manual !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    -webkit-hyphens: manual !important;
+    -ms-hyphens: manual !important;
+    white-space: normal !important;
+}
+
+/* Add specific styles for paragraphs */
+.content p {
+    max-width: 100% !important;
+    display: block !important;
+}
 
