@@ -28,5 +28,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-  });
+
+    // Handle active states for navigation
+    function updateActiveLinks() {
+      const currentPath = window.location.pathname;
+      const menuItems = document.querySelectorAll('.menu-main ul li');
+      
+      menuItems.forEach(item => {
+        const link = item.querySelector('a');
+        const section = link.dataset.section;
+        
+        // Special case for home
+        if (section === '' && currentPath === '/') {
+          item.classList.add('active');
+          return;
+        }
+        
+        // Check if current path starts with section path
+        // This handles nested routes like /posts/something/
+        if (section && currentPath.startsWith('/' + section + '/')) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
   
+    // Run on page load
+    updateActiveLinks();
+  
+    // Update on navigation (for SPA-like behavior if needed)
+    window.addEventListener('popstate', updateActiveLinks);
+  });
