@@ -11,27 +11,24 @@
   
   /* Inner header container (dock) */
   .header-container {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1400px; /* limit dock width on desktop */
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(237, 41, 57, 0.1);
-    border-radius: 12px;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    background: rgba(10, 10, 10, 0.85) !important; /* More transparent */
+    backdrop-filter: blur(8px) !important; /* Reduced blur */
+    border: 1px solid rgba(255, 255, 255, 0.03) !important; /* Lighter border */
+    border-radius: 12px !important;
     box-shadow: 
-       0 -15px 30px rgba(0, 0, 0, 0.4),
-       0 -10px 20px rgba(0, 0, 0, 0.3),
-       0 -5px 15px rgba(0, 0, 0, 0.2),
-       0 2px 6px rgba(0, 0, 0, 0.1),
-       0 3px 8px rgba(0, 0, 0, 0.08),
-       0 0 0 1px rgba(237, 41, 57, 0.1),
-       0 0 15px rgba(237, 41, 57, 0.05) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 7px 25px;  /* compact vertical padding */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-clip: padding-box;
+      0 4px 12px rgba(0, 0, 0, 0.15),
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.02),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.02) !important; /* Inner glow */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    padding: 7px 25px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background-clip: padding-box !important;
   }
   
   /* When mobile menu is open, blur the entire dock */
@@ -59,15 +56,12 @@
   
   /* Enhanced shadow when scrolled */
   .header.scrolled .header-container {
-    background: rgba(10, 10, 10, 0.98) !important;
+    background: rgba(10, 10, 10, 0.9) !important;
     box-shadow: 
-       0 -20px 40px rgba(0, 0, 0, 0.5),
-       0 -15px 30px rgba(0, 0, 0, 0.4),
-       0 -10px 20px rgba(0, 0, 0, 0.3),
-       0 2px 8px rgba(0, 0, 0, 0.15),
-       0 3px 10px rgba(0, 0, 0, 0.1),
-       0 0 0 1px rgba(237, 41, 57, 0.15),
-       0 0 20px rgba(237, 41, 57, 0.08) !important;
+      0 6px 16px rgba(0, 0, 0, 0.2),
+      0 2px 6px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.03),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.02) !important;
   }
   
   /* Logo (left side) */
