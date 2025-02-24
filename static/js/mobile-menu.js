@@ -5,12 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!hamburgerInput || !mobileMenu || !header) return;
 
+    // Handle About link visibility in mobile menu
+    function updateMobileMenuItems() {
+        const aboutMenuItem = mobileMenu.querySelector('li a[data-section="about"]');
+        if (aboutMenuItem) {
+            const aboutParent = aboutMenuItem.parentElement;
+            aboutParent.style.display = window.Hugo?.showAboutPage ? 'block' : 'none';
+        }
+    }
+
     const menuItems = mobileMenu.querySelectorAll('li');
     
     // Reset initial states
     hamburgerInput.checked = false;
     mobileMenu.classList.remove('open');
     header.classList.remove('menu-open');
+    
+    // Run initially
+    updateMobileMenuItems();
     
     hamburgerInput.addEventListener('change', function(e) {
         mobileMenu.classList.toggle('open', this.checked);
