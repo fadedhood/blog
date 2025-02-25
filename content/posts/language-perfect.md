@@ -1,6 +1,6 @@
 ---
 title: The revolution will be complete when the language is perfect
-date: 2019-08-07 00:00:00 Z
+date: 2019-08-07
 description: As soon as Winston had dealt with each of the messages, he clipped his
   speakwritten corrections to the appropriate copy of the Times and pushed them into
   the pneumatic tube. Then, with a movement which was as nearly as possible unconscious,
