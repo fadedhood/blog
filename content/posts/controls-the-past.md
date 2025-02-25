@@ -1,7 +1,7 @@
 ---
 title: Who controls the past controls the future. Who controls the present controls
   the past
-date: 2018-06-07 00:00:00 Z
+date: 2018-06-07
 description: Testing various Markdown elements
 image: images/cctv2.jpeg
 imageAltAttribute: CCTV Camera
