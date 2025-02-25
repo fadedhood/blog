@@ -145,6 +145,7 @@ body {
     height: 18px !important;
     width: auto !important;
     min-width: unset !important; /* Remove forced width */
+    pointer-events: none !important; /* Prevent clicking on the image itself */
 }
 
 .github-stats {
