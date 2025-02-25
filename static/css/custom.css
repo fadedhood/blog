@@ -93,6 +93,7 @@ div[id="wrapper"] {
 .author-large {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
+    margin-top: 30px !important;
 }
 
 /* Code block styles */
