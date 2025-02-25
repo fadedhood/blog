@@ -3,10 +3,7 @@ languageCode = "en-us"
 theme = "hugo-winston-theme"
 themesDir = "themes"
 title = "// F4dS3c Blog"
-
-[pagination]
-  pagerSize = 3
-
+paginate = 3
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
@@ -15,9 +12,6 @@ pygmentsUseClasses = true
   [module.hugoVersion]
     extended = true
     min = "0.55.0"
-
-[[module.imports]]
-path = "github.com/zerostaticthemes/hugo-winston-theme"
 
 [params]
   google_analytics_id = ""
