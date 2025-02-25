@@ -39,7 +39,7 @@ body {
     display: flex !important;
     justify-content: center !important;
     max-width: 1200px !important; /* Increased from default */
-    margin: 0 auto !important; /* Center the footer */
+    margin: 60px auto 0 !important; /* Added top margin, kept horizontal auto centering */
     padding: 0 20px 10px !important; /* Even padding */
 }
 
@@ -175,6 +175,7 @@ body {
         padding-bottom: 8px !important;
         padding: 0 15px 10px !important;
         width: calc(100% - 30px) !important; /* Account for padding */
+        margin: 40px auto 0 !important; /* Slightly less margin on mobile */
     }
 
     .footer-content {
