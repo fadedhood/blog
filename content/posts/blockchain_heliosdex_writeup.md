@@ -1,7 +1,7 @@
 ---
-title: CTF Writeup ~ Blockchain heliosdex 
+title: CTF Writeup ~ Blockchain heliosdex // HTBCyberApocalypse2025
 date: 2025-03-27
-description: You stand victorious, panting, over the fallen form of Eldorion. The beast's eternal resilience proved no match for your cunning and skill, adventurer.
+description: The challenge involves a flawed refund mechanism in the HeliosDEX smart contract. The contract allows swapping ETH for tokens, but when swapping for the MAL token, a rounding vulnerability lets a user receive an unexpectedly high ETH refund by sending only a minimal amount of ETH.
 image: images/htb/blockchain_heliosdex_writeup_step1.png
 imageAltAttribute: Blockchain heliosdex writeup
 tags:
