@@ -2,8 +2,8 @@
 title: CTF Writeup ~ Coding Dragon Fury // HTBCyberApocalypse2025
 date: 2025-03-27
 description: We are given a list of subarrays where each subarray represents possible damage values for one attack round. We must pick exactly one number from each subarray so that their sum equals a given target damage.
-image: images/htb/blockchain_heliosdex_writeup_step1.png
-imageAltAttribute: Blockchain heliosdex writeup
+# image: images/htb/blockchain_heliosdex_writeup_step1.png
+# imageAltAttribute: Coding Dragon Fury writeup
 tags:
 - ctf
 - HTBCyberApocalypse2025
