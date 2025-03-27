@@ -12,8 +12,7 @@ tags:
 ---
 
 
-# CHALLENGE NAME:
-HeliosDEX
+# CHALLENGE NAME: HeliosDEX
 
 # Description:
 
@@ -21,6 +20,7 @@ You stand victorious, panting, over the fallen form of Eldorion. The beast's ete
 
 **Points:** 975  
 **Difficulty:** Easy
+**Category:** Blockchain
 
 ---
 
