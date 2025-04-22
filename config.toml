@@ -1,4 +1,4 @@
-baseURL = "https://fadedhood.github.io/"
+baseURL = "https://fadedhood.github.io/blog/"
 languageCode = "en-us"
 theme = "hugo-winston-theme"
 themesDir = "themes"
