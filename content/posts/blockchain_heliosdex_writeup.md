@@ -52,7 +52,7 @@ The algorithm is implemented in four parts:
 4. **Flag Retrieval:**  
    Loop until the aggregator’s balance reaches at least 20 ETH, then use the control service to get the flag.
 
-![nc output](/images/htb/blockchain_heliosdex_writeup_step1.png)
+![nc output](/blog/images/htb/blockchain_heliosdex_writeup_step1.png)
 _Connecting to challenge server_
 
 ### **Step 4: Writing the Python Code**
@@ -298,7 +298,7 @@ if __name__ == "__main__":
 
 ## **Captured Flag:**
 
-![Flag](/images/htb/blockchain_heliosdex_writeup_flag.png)
+![Flag](/blog/images/htb/blockchain_heliosdex_writeup_flag.png)
 
 ```zsh
 HTB{0n_Heli0s_tr4d3s_a_d3cim4l_f4d3s_and_f0rtun3s_ar3_m4d3}

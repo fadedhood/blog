@@ -160,7 +160,7 @@ nc 94.237.57.187 37328
 
 ## Flag
 
-![Flag](/images/htb/blockchain_eldorion_writeup_flag.png)
+![Flag](/blog/images/htb/blockchain_eldorion_writeup_flag.png)
 
 ```zsh
 HTB{w0w_tr1pl3_hit_c0mbo_ggs_y0u_defe4ted_Eld0r10n}
