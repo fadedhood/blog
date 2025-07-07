@@ -1,6 +1,6 @@
 ---
 title: How FadStore Works – The Complete Technical Blueprint
-date: 2025-07-08 
+date: 2025-07-07
 description: Dive into the full architecture of FadStore — from backend GitHub config & Firebase to app-level caching, apps versioning, and admin logic. This post breaks down the entire codebase structure, data flow, and security model behind FadSec Lab's flagship Android app store.
 image: images/fadstore-blueprint/fadstore-blueprint.png
 imageAltAttribute: Screenshot of the FadStore Blueprint.
@@ -63,19 +63,19 @@ Fadstore/
     - `apps`: List of app keys (e.g., "fadcam", "fadveil", "fadstore").
     - `assets_version`: Per-app versioning for `icon`, `screenshots`, `metadata`, and `screenshot_count`.
 
-      ```json
-      {
-        "assets_version": {
-          "fadcam": {
-            "icon": 3,
-            "screenshots": 6,
-            "metadata": 1,
-            "screenshot_count": 10
-          },
-          ...
-        }
-      }
-      ```
+```json
+{
+  "assets_version": {
+    "fadcam": {
+      "icon": 3,
+      "screenshots": 6,
+      "metadata": 1,
+      "screenshot_count": 10
+    },
+    ...
+  }
+}
+```
 
 - **apps/**  
   - Contains a folder for each app, named by its key (lowercase).
@@ -276,14 +276,14 @@ FadStore is a modern Android app store for FadSec Lab apps. It uses a GitHub rep
     2. Server rules prevent unauthorized actions even if the app is modified.
   - Example security rule:
 
-    ```javascript
-    function isAdmin() {
-      let adminEmails = ['admin@example.com'];
-      return request.auth != null &&
-             request.auth.token.email_verified == true &&
-             request.auth.token.email in adminEmails;
-    }
-    ```
+```javascript
+function isAdmin() {
+  let adminEmails = ['admin@example.com'];
+  return request.auth != null &&
+          request.auth.token.email_verified == true &&
+          request.auth.token.email in adminEmails;
+}
+```
 
   - This ensures that even if someone modifies the app to show admin controls, any admin actions will fail at the server level.
 
@@ -292,11 +292,11 @@ FadStore is a modern Android app store for FadSec Lab apps. It uses a GitHub rep
 - **Conditional Rendering:**
   - Admin UI elements are conditionally rendered based on the `isAdmin` state:
 
-    ```kotlin
-    if (isOwnReview || isAdmin) {
-        // Show options menu with edit/delete controls
-    }
-    ```
+```kotlin
+if (isOwnReview || isAdmin) {
+    // Show options menu with edit/delete controls
+}
+```
 
   - Admin actions are visually distinguished with red tint and "(Admin)" labels.
 
