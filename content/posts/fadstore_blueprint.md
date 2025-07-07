@@ -1,6 +1,6 @@
 ---
 title: How FadStore Works – The Complete Technical Blueprint
-date: 2025-08-08
+date: 2025-07-08 
 description: Dive into the full architecture of FadStore — from backend GitHub config & Firebase to app-level caching, apps versioning, and admin logic. This post breaks down the entire codebase structure, data flow, and security model behind FadSec Lab's flagship Android app store.
 image: images/fadstore-blueprint/fadstore-blueprint.png
 imageAltAttribute: Screenshot of the FadStore Blueprint.
@@ -9,7 +9,6 @@ tags:
 - fadstore
 - fadseclab
 ---
-
 
 # FadStore App Data Architecture & Flow Blueprint
 
