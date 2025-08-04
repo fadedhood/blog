@@ -18,7 +18,7 @@ pygmentsUseClasses = true
     min = "0.55.0"
  
 [params]
-  google_analytics_id = ""
+  google_analytics_id = "G-XF0956P82V"
   twitter_handle = "@anon_faded"
   showAuthorOnHomepage = true
   showAuthorOnPosts = false
