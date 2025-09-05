@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "CTF Writeups",
       "InfoSec Insights",
       "Somewhere Between 0's and 1's",
-      "Security Researcher"
+      "Cybersecurity Enthusiast"
     ];
   
     let index = 0;
