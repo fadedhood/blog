@@ -23,11 +23,24 @@
 
   {{ block "meta_tags" . }}
     {{ if .Params.description }}<meta name="description" content="{{ .Params.description }}"/>{{ end }}
+    
+    <!-- Custom OG Meta Tags with conditional logic -->
+    {{ $ogImage := .Site.Params.defaultOgImage | default "images/og-image-webp.webp" }}
+    {{ $ogImageAlt := "F4dS3c Blog - Cybersecurity & Technical Content" }}
+
+    <!-- Logic: Use custom image if post has image AND useCustomOgImage is not explicitly false -->
+    {{ if and .Params.image (ne .Params.useCustomOgImage false) }}
+      {{ $ogImage = .Params.image }}
+      {{ $ogImageAlt = .Params.imageAltAttribute | default .Title }}
+    {{ end }}
+
+    <!-- Construct full URL for OG image -->
+    {{ $ogImageURL := $ogImage | absURL }}
+
     <meta property="og:title" content="{{ .Title }}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ .Permalink }}"/>
-    <!-- Update default OG image -->
-    <meta property="og:image" content="{{ .Site.BaseURL }}images/og-image-webp.webp"/>
+    <meta property="og:image" content="{{ $ogImageURL }}"/>
     <meta property="og:image:type" content="image/webp"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
@@ -36,7 +49,7 @@
     <meta name="twitter:card" content="summary_large_image"/>
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:creator" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
-    <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-image-webp.webp"/>
+    <meta name="twitter:image" content="{{ $ogImageURL }}"/>
   {{ end }}
 
   {{ if and .Site.Params.googleFontsUrl .Site.Params.enableGoogleFonts }}
