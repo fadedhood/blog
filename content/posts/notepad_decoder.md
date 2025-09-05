@@ -1,7 +1,7 @@
 ---
 title: "Decoding Windows Notepad Binary Files: A Step-by-Step Guide"
 date: 2025-07-07
-description: Learn how to decode and recover unsaved Notepad files from Windows TabState .bin files. This guide covers forensic analysis, command-line tools, and a Python script to extract UTF-16LE encoded content from dual-boot setups or disk images.
+description: Learn how to decode and recover unsaved Notepad binary files. This guide covers forensic analysis, command-line tools, and a Python script to extract UTF-16LE encoded content from dual-boot setups or disk images.
 image: images/notepad-decoder/step1.png
 imageAltAttribute: Screenshot of the Notepad decoding process.
 tags:
@@ -10,6 +10,7 @@ tags:
 - python
 - windows
 - tutorial
+- coding
 ---
 
 This guide demonstrates how to decode and recover unsaved Notepad files from Windows Notepad's TabState directory, containing .bin binaries. The goal is to extract unsaved Notepad content stored in these binary files.
@@ -53,7 +54,6 @@ hexdump -C /path/to/TabState/*.bin | head -20
 When we run it on any .bin file, the output looks something like this:
 
 ![Hexdump output showing Notepad .bin file structure and readable text](/images/notepad-decoder/step1.png)
-
 *Hexdump output showing Notepad .bin file structure and readable text.*
 
 In the screenshot above, we can see that the file starts with "NP" header (4e 50 in hex), indicating it's a Notepad file. The plain text content is visible, confirming readable text is present. The rest shows a mix of hex values and ASCII characters, with many null bytes (00) indicating UTF-16LE encoding.
