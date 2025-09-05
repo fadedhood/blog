@@ -18,13 +18,11 @@ This guide demonstrates how to decode and recover unsaved Notepad files from Win
 
 # Background
 
-Recently, while on Ubuntu in a dual-boot setup, I needed some content from my Windows machine in Notepad. I couldn't just reboot into Windows to get it, as that wasn't efficient.
+Recently, while using Ubuntu in a dual-boot setup, I needed some text I had written in Notepad on my Windows side but never saved. Rebooting into Windows just to get it wasn’t practical.
 
-This is useful when you're on dual boot and don't want to reboot into Windows just to get unsaved Notepad files. It's also helpful in CTFs or forensics when you have a disk image of a Windows machine and want to extract unsaved Notepad files from it. You can even run the script on Windows for experimenting and learning.
+I remembered a YouTube video by John Hammond where he showed that Notepad leaves unsaved files on disk. That gave me the idea to try it out myself and eventually build a small tool to pull those files straight from Linux without switching back to Windows.
 
-I remembered a YouTube video from John Hammond where he discovered that unsaved Notepad files are saved somewhere on the disk. So, I decided to do that now and created a tool to extract those unsaved Notepad files directly from Linux without booting into Windows.
-
-The complete Python script is available on my GitHub (linked at the end). But before providing a ready-made solution, I'd like to take the forensics approach to understand the analysis and extraction process first.
+The Python script is on my GitHub (linked at the end of this post). But before getting to the tool, I want to walk through the forensic side of it - explaining how the analysis and extraction actually work, while also keeping the basics clear for non-technical readers.
 
 ## Prerequisites
 
