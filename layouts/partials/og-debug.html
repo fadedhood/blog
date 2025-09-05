@@ -1,0 +1,23 @@
+<!-- OG DEBUG INFO -->
+<div style="background: #222; color: #fff; padding: 10px; margin: 10px; font-family: monospace; font-size: 12px; border-left: 4px solid #ED2939;">
+  <h4 style="color: #ED2939; margin: 0 0 10px 0;">OG Image Debug Info</h4>
+  <p><strong>Post has image:</strong> {{ if .Params.image }}YES ({{ .Params.image }}){{ else }}NO{{ end }}</p>
+  <p><strong>useCustomOgImage isset:</strong> {{ isset .Params "useCustomOgImage" }}</p>
+  <p><strong>useCustomOgImage value:</strong> {{ .Params.useCustomOgImage }}</p>
+  <p><strong>Final logic decision:</strong> 
+    {{ if .Params.image }}
+      {{ $useCustom := true }}
+      {{ if isset .Params "useCustomOgImage" }}
+        {{ $useCustom = .Params.useCustomOgImage }}
+      {{ end }}
+      {{ if $useCustom }}
+        CUSTOM IMAGE ({{ .Params.image }})
+      {{ else }}
+        DEFAULT IMAGE
+      {{ end }}
+    {{ else }}
+      DEFAULT IMAGE (no post image)
+    {{ end }}
+  </p>
+  <p><strong>Default OG Image:</strong> {{ .Site.Params.defaultOgImage }}</p>
+</div>
