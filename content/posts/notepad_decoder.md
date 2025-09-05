@@ -1,6 +1,6 @@
 ---
 title: "Decoding Windows Notepad Binary Files: A Step-by-Step Guide"
-date: 2025-07-07
+date: 2025-09-05
 description: Learn how to decode and recover unsaved Notepad binary files. This guide covers forensic analysis, command-line tools, and a Python script to extract UTF-16LE encoded content from dual-boot setups or disk images.
 image: images/notepad-decoder/step1.png
 imageAltAttribute: Screenshot of the Notepad decoding process.
@@ -100,6 +100,9 @@ The script is available on my GitHub: [Notepad Decoder](https://github.com/anonf
 When run on a single .bin file, this is the output:
 
 ```zsh
+Decoding: /media/faded/0A3A/Users/faded/AppData/Local/Packages/Microsoft.WindowsNotepad_8wekyb3d8bbwe/LocalState/TabState/74ab2d03-290b-44ea-a971-12550cf504ca.bin
+Created output directory: /mnt/d/ubuntu-shared/Documents/Documents/repos/NotepadDecoder/decoded_notepad_output
+
 Extracted Content:
 ----------------------------------------
 zoom feature by https://github.com/anonfaded/FadCam/pull/166/
@@ -107,6 +110,8 @@ added immediate delete option
 added slash screen
 fixed issue with the wide lens and 60fps not working
 added app cloaking in recent apps
-- Clock Widget: If you click it when FadCam isn't open it takes you to the widget page...
-- video stats not updating on first record video, need to manually refresh...
+
+[... 4971 more characters ...]
+
+Saved decoded content to: /mnt/d/ubuntu-shared/Documents/Documents/repos/NotepadDecoder/decoded_notepad_output/zoom_feature_by_httpsgithub_decoded.md
 ```

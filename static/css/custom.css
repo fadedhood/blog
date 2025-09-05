@@ -3,7 +3,7 @@
   --base-offset-color: #141414 !important;  /* Keeps slight contrast for sections */
   --highlight-color: #ED2939 !important;  /* Vibrant Red */
   --heading-color: #EAEAEA !important;  /* Soft White */
-  --text-color: #BBBBBB !important;  /* Light Gray for better readability */
+  --text-color: #B6BCC5 !important;  /* Tailwind gray-400 - slightly darker */
   --dot-color: #ED2939 !important;  /* Matches Highlight */
   --code-bg: #121212 !important;  /* Darker Code Background for contrast */
 }
@@ -1033,7 +1033,6 @@ div[id="wrapper"] {
     0 0 50px rgba(237, 41, 57, 0.02),
     0 10px 20px rgba(0, 0, 0, 0.4) !important;
   filter: contrast(1.02) !important;
-  transition: all 0.3s ease !important;
 }
 
 /* Image caption styles */
@@ -1348,5 +1347,20 @@ pre, code {
     .post-title {
         font-size: 1.5rem !important;
     }
+}
+
+/* Emphasize bold text: use pure white for highest contrast */
+.content strong,
+.content b,
+strong,
+b {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+/* Specific targeting inside paragraphs to ensure bold stays white */
+.content p strong,
+.content p b {
+  color: #FFFFFF !important;
 }
 
