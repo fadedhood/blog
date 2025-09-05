@@ -53,6 +53,16 @@ pygmentsUseClasses = true
   footer_text = ":: F4dS3c Blog"  # Add this line for custom footer text
   footer_year = "2024-2025"  # Static year for footer
 
+  # Giscus Comments Configuration
+  # Enable comments on all blog posts using GitHub Discussions
+  enableGiscusComments = true        # Set to false to disable comments site-wide
+  giscusRepo = "fadedhood/blog"      # Your GitHub repository (username/repo-name)
+  giscusRepoId = "R_kgDON9fOJw"      # Repository ID from giscus.app
+  giscusCategory = "Giscus Comments" # Discussion category name
+  giscusCategoryId = "DIC_kwDON9fOJ84CvBE7" # Category ID from giscus.app
+  giscusInputPosition = "top"        # Comment input position: "top" or "bottom"
+  giscusTheme = "dark"              # Theme: "light", "dark", "dark_dimmed", etc.
+
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]
   [markup.goldmark]

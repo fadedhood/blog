@@ -1364,3 +1364,46 @@ b {
   color: #FFFFFF !important;
 }
 
+/* Giscus Comments Styling */
+.giscus-comments {
+  margin-top: 4rem !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid var(--base-offset-color) !important;
+}
+
+.comments-header {
+  margin-bottom: 2rem !important;
+  text-align: center !important;
+}
+
+.comments-header h3 {
+  color: var(--heading-color) !important;
+  font-size: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.comments-subtitle {
+  color: var(--text-color) !important;
+  font-size: 0.9rem !important;
+  margin: 0 !important;
+  opacity: 0.8 !important;
+}
+
+/* Giscus iframe styling to match dark theme */
+.giscus {
+  width: 100% !important;
+}
+
+/* Additional spacing for comments section */
+@media (max-width: 768px) {
+  .giscus-comments {
+    margin-top: 3rem !important;
+    padding-top: 1.5rem !important;
+  }
+  
+  .comments-header h3 {
+    font-size: 1.3rem !important;
+  }
+}
+

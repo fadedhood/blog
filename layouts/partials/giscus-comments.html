@@ -1,0 +1,26 @@
+{{ if and .Site.Params.enableGiscusComments .Site.Params.giscusRepo }}
+<div class="giscus-comments">
+  <div class="comments-header">
+    <h3>Comments</h3>
+    <p class="comments-subtitle">Join the discussion below</p>
+  </div>
+  
+  <script 
+    src="https://giscus.app/client.js"
+    data-repo="{{ .Site.Params.giscusRepo }}"
+    data-repo-id="{{ .Site.Params.giscusRepoId }}"
+    data-category="{{ .Site.Params.giscusCategory }}"
+    data-category-id="{{ .Site.Params.giscusCategoryId }}"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="{{ .Site.Params.giscusInputPosition | default "top" }}"
+    data-theme="{{ .Site.Params.giscusTheme | default "dark" }}"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+{{ end }}
