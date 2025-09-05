@@ -4,6 +4,7 @@ date: 2025-09-05
 description: Learn how to decode and recover unsaved Notepad binary files. This guide covers forensic analysis, command-line tools, and a Python script to extract UTF-16LE encoded content from dual-boot setups or disk images.
 image: images/notepad-decoder/step1.png
 imageAltAttribute: Screenshot of the Notepad decoding process.
+useCustomOgImage: true  # Set to false to use default site OG image instead
 tags:
 - notepad
 - forensics

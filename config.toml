@@ -20,6 +20,12 @@ pygmentsUseClasses = true
 [params]
   google_analytics_id = "G-XF0956P82V"
   twitter_handle = "@anon_faded"
+  
+  # Open Graph Configuration
+  defaultOgImage = "images/og-image-webp.webp"  # Default OG image for the site
+  ogImageWidth = "1200"   # OG image width (recommended: 1200px)
+  ogImageHeight = "630"   # OG image height (recommended: 630px)
+  
   showAuthorOnHomepage = true
   showAuthorOnPosts = false
   showIntroContentOnHomepage = true # the description below the title on home page

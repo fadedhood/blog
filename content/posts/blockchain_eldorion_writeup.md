@@ -4,6 +4,7 @@ date: 2025-03-27
 description: The main vulnerability lies in the health regeneration mechanism. While health resets each block, we can execute multiple attacks within a single transaction (same block) to bypass this regeneration.
 image: images/htb/blockchain_eldorion_writeup_hero.png
 imageAltAttribute: Blockchain Eldorian writeup
+useCustomOgImage: false  # This will use the default site OG image instead of the post image
 tags:
 - ctf
 - HTBCyberApocalypse2025

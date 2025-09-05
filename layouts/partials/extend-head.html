@@ -1,1 +1,42 @@
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />
+
+<!-- Open Graph Meta Tags -->
+{{ $ogImage := .Site.Params.defaultOgImage }}
+{{ $ogImageAlt := "F4dS3c Blog - Cybersecurity & Technical Content" }}
+
+{{ if .Params.image }}
+  {{ if .Params.useCustomOgImage | default true }}
+    {{ $ogImage = .Params.image }}
+    {{ $ogImageAlt = .Params.imageAltAttribute | default .Title }}
+  {{ end }}
+{{ end }}
+
+<!-- Construct full URL for OG image -->
+{{ $ogImageURL := $ogImage | absURL }}
+
+<meta property="og:title" content="{{ .Title | default .Site.Title }}" />
+<meta property="og:description" content="{{ .Description | default .Site.Params.description | default .Summary | truncate 160 }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ $ogImageURL }}" />
+<meta property="og:image:alt" content="{{ $ogImageAlt }}" />
+<meta property="og:image:width" content="{{ .Site.Params.ogImageWidth | default "1200" }}" />
+<meta property="og:image:height" content="{{ .Site.Params.ogImageHeight | default "630" }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}" />
+<meta name="twitter:title" content="{{ .Title | default .Site.Title }}" />
+<meta name="twitter:description" content="{{ .Description | default .Site.Params.description | default .Summary | truncate 160 }}" />
+<meta name="twitter:image" content="{{ $ogImageURL }}" />
+<meta name="twitter:image:alt" content="{{ $ogImageAlt }}" />
+
+{{ if .IsPage }}
+<!-- Article specific meta tags -->
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
+{{ range .Params.tags }}
+<meta property="article:tag" content="{{ . }}" />
+{{ end }}
+{{ end }}
